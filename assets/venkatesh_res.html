@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Venkatesh P — AI/ML Engineer Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --ink: #111111;
+      --mid: #444444;
+      --light: #6b6b6b;
+      --rule: #222222;
+      --accent: #1a4faa;
+      --tag-bg: #f0f4fb;
+    }
+
+    html,
+    body {
+      width: 210mm;
+      min-height: 297mm;
+      background: #fff;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 8.6pt;
+      line-height: 1.38;
+      color: var(--ink);
+      padding: 9mm 11mm 8mm 11mm;
+    }
+
+    /* ── HEADER ─────────────────────────── */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 5px;
+      border-bottom: 2px solid var(--rule);
+      margin-bottom: 5px;
+    }
+
+    .name {
+      font-family: 'EB Garamond', serif;
+      font-size: 26pt;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .title-tag {
+      font-size: 8pt;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 3px;
+    }
+
+    .contact {
+      text-align: right;
+      font-size: 7.8pt;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* ── SUMMARY ─────────────────────────── */
+    .summary {
+      font-size: 8.6pt;
+      color: var(--mid);
+      line-height: 1.45;
+      margin-bottom: 5px;
+      padding-bottom: 5px;
+      border-bottom: 0.5px solid #ddd;
+    }
+
+    .summary strong {
+      color: var(--ink);
+    }
+
+    /* ── SECTION HEADING ─────────────────── */
+    .section-head {
+      font-family: 'EB Garamond', serif;
+      font-size: 10.5pt;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--ink);
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 1.5px;
+      margin-bottom: 4px;
+      margin-top: 5px;
+    }
+
+    /* ── SKILLS ──────────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px 16px;
+    }
+
+    .skill-row {
+      display: flex;
+      gap: 4px;
+      font-size: 8pt;
+      line-height: 1.5;
+    }
+
+    .skill-label {
+      font-weight: 600;
+      color: var(--ink);
+      white-space: nowrap;
+      min-width: 90px;
+    }
+
+    .skill-list {
+      color: var(--mid);
+    }
+
+    /* ── EXPERIENCE ──────────────────────── */
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .exp-title {
+      font-size: 9pt;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .exp-company {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .exp-date {
+      font-size: 7.8pt;
+      color: var(--light);
+    }
+
+    /* ── BULLETS ─────────────────────────── */
+    ul {
+      list-style: none;
+      margin-bottom: 4px;
+    }
+
+    ul li {
+      padding-left: 10px;
+      position: relative;
+      font-size: 8.3pt;
+      color: var(--mid);
+      line-height: 1.4;
+      margin-bottom: 2px;
+    }
+
+    ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    ul li strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* ── PROJECT ─────────────────────────── */
+    .proj-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+
+    .proj-title {
+      font-size: 9pt;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .proj-links a {
+      font-size: 7.8pt;
+      color: var(--accent);
+      text-decoration: none;
+      margin-left: 8px;
+    }
+
+    .proj-stack {
+      font-size: 7.4pt;
+      color: var(--light);
+      margin-bottom: 2px;
+      font-style: italic;
+    }
+
+    /* ── EDUCATION ───────────────────────── */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+
+    .edu-deg {
+      font-size: 8.8pt;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .edu-meta {
+      font-size: 7.8pt;
+      color: var(--light);
+    }
+
+    .edu-sub {
+      font-size: 7.8pt;
+      color: var(--mid);
+    }
+
+    /* ── ACHIEVEMENTS ────────────────────── */
+    .ach-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px 16px;
+      list-style: none;
+    }
+
+    .ach-list li {
+      font-size: 8pt;
+      color: var(--mid);
+      line-height: 1.45;
+      padding-left: 10px;
+    }
+
+    .ach-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 7pt;
+    }
+
+    .ach-list li {
+      position: relative;
+    }
+
+    /* ── PRINT ───────────────────────────── */
+    @media print {
+
+      html,
+      body {
+        width: 210mm;
+        height: 297mm;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══ HEADER ═══════════════════════════════════════════════ -->
+  <div class="header">
+    <div>
+      <div class="name">Venkatesh P</div>
+      <div class="title-tag">AI / ML Engineer &nbsp;·&nbsp; RAG · LLM Agents · MLOps</div>
+    </div>
+    <div class="contact">
+      Chennai, India &nbsp;|&nbsp; +91-91766-36234<br>
+      <a href="mailto:venkateshpvnky9@gmail.com">venkateshpvnky9@gmail.com</a><br>
+      <a href="https://linkedin.com/in/venkatesh-ml">linkedin/venkatesh-ml</a> &nbsp;·&nbsp;
+      <a href="https://github.com/venkatesh-hyper">github/venkatesh-hyper</a> &nbsp;·&nbsp;
+      <a href="https://venkatesh-hyper.github.io/resume/">Portfolio</a>
+    </div>
+  </div>
+
+  <!-- ══ SUMMARY ═══════════════════════════════════════════════ -->
+  <div class="summary">
+    Applied AI/ML Engineer with <strong>end-to-end ownership</strong> of RAG pipelines, LLM agents, and production ML
+    systems. Built a semantic search engine over <strong>42,549 papers benchmarked at 2,979 QPS (p50 = 0.31 ms, p95 =
+      0.53 ms)</strong> and a medical NLP/RAG system deployed on GCP. Hands-on across the full stack: data ingestion →
+    vector retrieval → LLM serving → production deployment. Stack: FastAPI · FAISS · LangChain · Docker · GCP · MLflow ·
+    HuggingFace.
+  </div>
+
+  <!-- ══ SKILLS ════════════════════════════════════════════════ -->
+  <div class="section-head">Technical Skills</div>
+  <div class="skills-grid">
+    <div class="skill-row">
+      <span class="skill-label">AI Agents & RAG:</span>
+      <span class="skill-list">LangChain, LangGraph, LlamaIndex, ReAct, Multi-Agent, RAGAS</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">LLMs & GenAI:</span>
+      <span class="skill-list">HuggingFace, BERT/GPT/LLaMA, Fine-Tuning (LoRA/QLoRA), Groq API</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">Vector & Search:</span>
+      <span class="skill-list">FAISS (IVFFlat/HNSW/PQ), ChromaDB, Weaviate, Hybrid Search, Reranking</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">ML & DL:</span>
+      <span class="skill-list">PyTorch, TensorFlow, Scikit-learn, CNNs, RNNs, Ensemble, XGBoost</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">Cloud & MLOps:</span>
+      <span class="skill-list">GCP (Vertex AI, GCS), AWS (EC2, S3), Docker, MLflow, DVC, GitHub Actions</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">Data & Backend:</span>
+      <span class="skill-list">FastAPI, PySpark, Pandas, SQL (Advanced), PostgreSQL, Redis</span>
+    </div>
+  </div>
+
+  <!-- ══ EXPERIENCE ════════════════════════════════════════════ -->
+  <div class="section-head">Experience</div>
+
+  <div class="exp-header">
+    <div>
+      <span class="exp-title">AI/ML Engineer Intern</span>
+      <span style="color:#999; margin: 0 5px;">·</span>
+      <span class="exp-company">NASO Technologies</span>
+    </div>
+    <div class="exp-date">Jan 2024 – Apr 2024</div>
+  </div>
+  <ul>
+    <li>Designed and shipped <strong>Well.AI</strong> end-to-end: raw patient data ingestion → HuggingFace embeddings →
+      ChromaDB → LLM clinical QA, served via <strong>FastAPI on GCP</strong> with Docker Compose and Supabase session
+      logging.</li>
+    <li>Engineered prompt workflows for <strong>clinical health reasoning</strong>; structured retrieval context windows
+      to improve response faithfulness and reduce hallucination rate in medical QA tasks.</li>
+    <li>Translated health business requirements into ML solutions in collaboration with domain stakeholders; delivered
+      across dev, staging, and prod with <strong>governance-ready deployment</strong>.</li>
+  </ul>
+
+  <div class="exp-header">
+    <div>
+      <span class="exp-title">Machine Learning Researcher</span>
+      <span style="color:#999; margin: 0 5px;">·</span>
+      <span class="exp-company">RUSA Project, University of Madras</span>
+    </div>
+    <div class="exp-date">Apr 2024 – Jul 2024</div>
+  </div>
+  <ul>
+    <li>Built automated ML pipeline on a <strong>high-dimensional tabular dataset (50K+ SNP features)</strong>: feature
+      engineering → ensemble training (XGBoost + Random Forest) → hyperparameter tuning, achieving <strong>87.6%
+        classification accuracy</strong>.</li>
+    <li>Deployed interpretable <strong>Streamlit dashboard</strong> for non-technical stakeholders; implemented
+      <strong>DVC</strong> for full data versioning and experiment tracking on GCP.
+    </li>
+  </ul>
+
+  <!-- ══ PROJECTS ══════════════════════════════════════════════ -->
+  <div class="section-head">Projects</div>
+
+  <div class="proj-header">
+    <div class="proj-title">PaperLens — Semantic Search Engine with Agentic RAG</div>
+    <div class="proj-links">
+      <a href="https://github.com/venkatesh-hyper/paperlens">GitHub</a>
+      <a href="https://paperlens-i.streamlit.app/">Live Demo</a>
+    </div>
+  </div>
+  <div class="proj-stack">sentence-transformers · FAISS IVFFlat · FastAPI · Groq LLaMA-3 · ChromaDB · Docker · Streamlit
+  </div>
+  <ul>
+    <li>Built full retrieval pipeline over <strong>42,549 arXiv papers (20 domains)</strong>: ingestion → 384-dim
+      embeddings → FAISS IVFFlat (62.3 MB index) → RAG summarisation; benchmarked at <strong>p50 = 0.31 ms, p95 = 0.53
+        ms, 2,979 QPS</strong>, production-grade throughput on a low-resource deployment.</li>
+    <li>FastAPI backend with <strong>LRU embedding cache</strong> cut repeated query latency from 1,100 ms →
+      <strong>0.94 ms (55× speedup)</strong>; integrated Groq LLaMA-3.3-70b agentic pipeline generating structured
+      4-part paper summaries in ~1,200 ms.
+    </li>
+  </ul>
+
+  <div class="proj-header">
+    <div class="proj-title">Enterprise Ticket Analysis Bot — Agentic RAG with Tool Use</div>
+    <div class="proj-links">
+      <a href="https://github.com/venkatesh-hyper/ticket_bot_llm">GitHub</a>
+    </div>
+  </div>
+  <div class="proj-stack">FastAPI · ChromaDB · Groq Llama-4 Scout · SentenceTransformers · LangChain · Streamlit</div>
+  <ul>
+    <li>Production RAG pipeline over <strong>70 MB+ enterprise ticket logs</strong>: PDF parsing → chunking →
+      SentenceTransformer embeddings → LangChain ReAct agent with tool use, achieving <strong>p95 retrieval under 200
+        ms</strong>.</li>
+    <li>Implemented <strong>agent memory, planning, and multi-step execution loops</strong>; enabled natural-language
+      querying over structured enterprise data — applicable to support automation and operational analytics.</li>
+  </ul>
+
+  <div class="proj-header">
+    <div class="proj-title">Brain Tumor Classifier — Automated Medical Imaging Pipeline</div>
+    <div class="proj-links">
+      <a href="https://github.com/venkatesh-hyper/Brain-Tumour-classification">GitHub</a>
+    </div>
+  </div>
+  <div class="proj-stack">TensorFlow · CNN · Transfer Learning · Data Augmentation · Docker</div>
+  <ul>
+    <li>Automated preprocessing → augmentation → CNN training → evaluation pipeline; achieved <strong>93%
+        accuracy</strong> on 4-class MRI brain tumor classification with transfer learning; containerised inference via
+      Docker.</li>
+  </ul>
+
+  <!-- ══ EDUCATION ═════════════════════════════════════════════ -->
+  <div class="section-head">Education</div>
+  <div class="edu-row">
+    <span class="edu-deg">Master of Computer Applications (MCA)</span>
+    <span class="edu-meta">University of Madras, Chennai &nbsp;·&nbsp; 2023–2025 &nbsp;·&nbsp; GPA 7.38/10</span>
+  </div>
+  <div class="edu-sub" style="margin-bottom:3px;">Specialisation: Machine Learning, Deep Learning, Data Science</div>
+  <div class="edu-row">
+    <span class="edu-deg">B.Sc. Biotechnology</span>
+    <span class="edu-meta">RKM Vivekananda College, Chennai &nbsp;·&nbsp; 2020–2023 &nbsp;·&nbsp; GPA 7.2/10</span>
+  </div>
+  <div class="edu-sub">Foundation in statistics, computational methods, and biological data analysis</div>
+
+  <!-- ══ ACHIEVEMENTS ══════════════════════════════════════════ -->
+  <div class="section-head">Achievements, Leadership & Certifications</div>
+  <ul class="ach-list">
+    <li><strong>Mentor & AI Educator</strong> — Guided HSC students (3 yrs 70+ students) on AI fundamentals and career
+      paths</li>
+    <li><strong>Vice President</strong>, Rotaract Club of RKMVC — led 5+ AI awareness events across Chennai</li>
+    <li><strong>2nd Place</strong> — AI Front-End Hackathon 2025, MCC Chennai (25+ competing colleges)</li>
+    <li>Published technical articles on EDA, NLP pipelines, and ML on <strong>Medium</strong></li>
+    <li><strong>AWS Data Engineering Bootcamp</strong> (Udemy, 2024) · Deep Learning Specialization (Coursera, In
+      Progress)</li>
+  </ul>
