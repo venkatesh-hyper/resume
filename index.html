@@ -3,214 +3,219 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta name="description" content="Venkatesh P — ML Engineer specializing in RAG systems, vector search, LLMs, and production ML pipelines."/>
+<meta name="description" content="Venkatesh P — ML Engineer. RAG systems, vector search, LLMs, and production pipelines. 2,979 QPS · 0.31ms p50 · 55× cache speedup."/>
 <title>Venkatesh P · ML Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Mono:wght@400;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Barlow:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg:      #080a0f;
-  --bg2:     #0d1018;
-  --surface: #111520;
-  --card:    #141824;
-  --border:  rgba(255,255,255,0.07);
-  --border2: rgba(255,255,255,0.13);
-  --muted:   #4a5068;
-  --dim:     #8892aa;
-  --body:    #aab4cc;
-  --white:   #ffffff;
-  --amber:   #f5a623;
-  --amber2:  #ffc45a;
-  --cyan:    #00d4ff;
-  --cyan-d:  rgba(0,212,255,0.10);
-  --amber-d: rgba(245,166,35,0.10);
-  --mono: 'Space Mono', monospace;
-  --serif: 'DM Serif Display', serif;
-  --sans: 'DM Sans', sans-serif;
+  --bg:     #f7f6f2;
+  --bg2:    #efede8;
+  --surface:#eceae4;
+  --card:   #e8e6df;
+  --ink:    #0d0d0d;
+  --ink2:   #2e2e2e;
+  --muted:  #7a7a72;
+  --dim:    #a0a098;
+  --rule:   #c8c6be;
+  --red:    #d42b2b;
+  --mono:   'Space Mono', monospace;
+  --serif:  'Cormorant', serif;
+  --sans:   'Barlow', sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--body);font-family:var(--sans);font-size:15px;line-height:1.75;overflow-x:hidden}
-::selection{background:var(--amber);color:var(--bg)}
-::-webkit-scrollbar{width:3px}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.75;overflow-x:hidden}
+::selection{background:var(--ink);color:var(--bg)}
+::-webkit-scrollbar{width:2px}
 ::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--muted);border-radius:2px}
+::-webkit-scrollbar-thumb{background:var(--rule)}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:0 60px;height:64px;background:rgba(8,10,15,0.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.nav-logo{font-family:var(--mono);font-size:14px;font-weight:700;color:var(--white);text-decoration:none}
-.nav-logo span{color:var(--amber)}
-.nav-links{display:flex;gap:32px;list-style:none}
-.nav-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s}
-.nav-links a:hover{color:var(--white)}
-.nav-cta{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:8px;font-family:var(--mono);font-size:12px;font-weight:700;background:var(--amber);color:var(--bg);text-decoration:none;transition:all .2s}
-.nav-cta:hover{background:var(--amber2);transform:translateY(-1px)}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:0 64px;height:60px;background:var(--bg);border-bottom:1px solid var(--ink)}
+.nav-logo{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:.5px}
+.nav-logo span{color:var(--red)}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-family:var(--mono);font-size:11px;color:var(--muted);text-decoration:none;letter-spacing:1.5px;text-transform:uppercase;transition:color .15s}
+.nav-links a:hover{color:var(--ink)}
+.nav-right{display:flex;align-items:center;gap:8px}
+.nav-cta{font-family:var(--mono);font-size:11px;font-weight:700;padding:7px 18px;background:var(--ink);color:var(--bg);text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:background .15s}
+.nav-cta:hover{background:var(--red)}
+.nav-ghost{font-family:var(--mono);font-size:11px;padding:7px 16px;background:transparent;color:var(--ink);border:1px solid var(--rule);text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:border-color .15s}
+.nav-ghost:hover{border-color:var(--ink)}
 
 /* HERO */
-#hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 60px 80px;overflow:hidden}
-.grid-bg{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 70% at 50% 0%,black 30%,transparent 100%)}
-.glow1{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(245,166,35,0.07) 0%,transparent 70%);top:5%;left:-120px;z-index:0;pointer-events:none}
-.glow2{position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(0,212,255,0.05) 0%,transparent 70%);bottom:0;right:8%;z-index:0;pointer-events:none}
+#hero{min-height:100vh;display:flex;align-items:center;padding:120px 64px 80px;border-bottom:1px solid var(--ink)}
+.hero-inner{width:100%;display:grid;grid-template-columns:1fr 300px;gap:80px;align-items:end}
+.hero-eyebrow{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:32px}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--ink)}
+h1{font-family:var(--serif);font-size:clamp(72px,10vw,130px);font-weight:700;line-height:.92;color:var(--ink);letter-spacing:-3px;margin-bottom:4px}
+h1 em{font-style:italic;font-weight:400}
+.hero-sub{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.4vw,30px);color:var(--muted);margin-bottom:36px;font-weight:400;line-height:1.35;letter-spacing:-.3px;max-width:560px}
+.hero-desc{font-size:16px;font-weight:300;color:var(--ink2);max-width:520px;line-height:1.95;margin-bottom:44px}
+.hero-desc strong{color:var(--ink);font-weight:600}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
 
-.hero-inner{position:relative;z-index:1;width:100%;display:grid;grid-template-columns:1fr 340px;gap:80px;align-items:center}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;font-family:var(--mono);font-size:12px;font-weight:700;background:var(--ink);color:var(--bg);text-decoration:none;letter-spacing:.8px;text-transform:uppercase;transition:background .15s}
+.btn-primary:hover{background:var(--red)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;font-family:var(--mono);font-size:12px;background:transparent;color:var(--ink);border:1px solid var(--rule);text-decoration:none;letter-spacing:.8px;text-transform:uppercase;transition:border-color .15s}
+.btn-ghost:hover{border-color:var(--ink)}
 
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;font-weight:700;color:var(--amber);letter-spacing:2px;text-transform:uppercase;margin-bottom:24px}
-.hero-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--amber)}
-h1{font-family:var(--serif);font-size:clamp(52px,7vw,92px);font-weight:400;line-height:1.0;color:var(--white);letter-spacing:-2px;margin-bottom:8px}
-h1 em{font-style:italic;color:var(--amber)}
-.hero-sub{font-family:var(--serif);font-size:clamp(20px,2.5vw,28px);font-weight:400;font-style:italic;color:var(--dim);margin-bottom:28px;letter-spacing:-0.5px}
-.hero-desc{font-size:16px;font-weight:300;color:var(--dim);max-width:540px;line-height:1.9;margin-bottom:40px}
-.hero-desc strong{color:var(--body);font-weight:500}
-.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
-
-.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:10px;font-family:var(--mono);font-size:13px;font-weight:700;background:var(--white);color:var(--bg);text-decoration:none;transition:all .22s}
-.btn-primary:hover{background:var(--amber);transform:translateY(-2px);box-shadow:0 8px 28px rgba(245,166,35,0.2)}
-.btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;font-family:var(--mono);font-size:13px;font-weight:400;background:transparent;color:var(--body);border:1px solid var(--border2);text-decoration:none;transition:all .22s}
-.btn-ghost:hover{border-color:var(--amber);color:var(--amber);transform:translateY(-2px)}
-
-.status-chip{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:100px;background:var(--cyan-d);border:1px solid rgba(0,212,255,0.18);color:var(--cyan);font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
-.status-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.35}}
+.chips{display:flex;flex-direction:column;gap:8px}
+.status-chip{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+.status-dot{width:6px;height:6px;border-radius:50%;background:var(--red);animation:pulse 2s infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.2}}
 
 /* PROFILE CARD */
-.profile-card{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;position:relative}
-.profile-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--amber),var(--cyan) 70%,transparent);z-index:2}
-.profile-img-wrap{width:100%;aspect-ratio:3/3.5;overflow:hidden;position:relative}
-.profile-img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .5s ease;display:block}
-.profile-card:hover .profile-img{transform:scale(1.04)}
-.profile-img-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 55%,rgba(8,10,15,0.95) 100%)}
-.profile-fallback{width:100%;height:100%;background:linear-gradient(135deg,var(--surface),var(--card));display:none;align-items:center;justify-content:center;font-family:var(--serif);font-size:72px;color:var(--amber)}
-.profile-footer{padding:16px 20px 20px}
-.profile-name{font-family:var(--serif);font-size:18px;color:var(--white);margin-bottom:3px}
-.profile-role{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.5px}
+.profile-card{position:relative;border:1px solid var(--ink)}
+.profile-img-wrap{width:100%;aspect-ratio:3/3.8;overflow:hidden;position:relative}
+.profile-img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(100%);transition:filter .4s ease}
+.profile-card:hover .profile-img{filter:grayscale(0%)}
+.profile-fallback{width:100%;height:100%;background:var(--surface);display:none;align-items:center;justify-content:center;font-family:var(--serif);font-size:80px;color:var(--muted);font-style:italic}
+.profile-footer{padding:14px 16px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center}
+.profile-name{font-family:var(--serif);font-size:16px;font-weight:600;color:var(--ink)}
+.profile-role{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.5px}
 
-/* HERO ANIMATIONS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-.hero-eyebrow{animation:fadeUp .7s .1s both cubic-bezier(.16,1,.3,1)}
-.hero-text h1{animation:fadeUp .7s .2s both cubic-bezier(.16,1,.3,1)}
-.hero-sub{animation:fadeUp .7s .3s both cubic-bezier(.16,1,.3,1)}
-.hero-desc{animation:fadeUp .7s .4s both cubic-bezier(.16,1,.3,1)}
-.hero-cta{animation:fadeUp .7s .5s both cubic-bezier(.16,1,.3,1)}
-.status-chip{animation:fadeUp .7s .6s both cubic-bezier(.16,1,.3,1)}
-.profile-card{animation:fadeUp .8s .35s both cubic-bezier(.16,1,.3,1)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hero-eyebrow{animation:fadeUp .6s .1s both}
+.hero-text h1{animation:fadeUp .6s .18s both}
+.hero-sub{animation:fadeUp .6s .26s both}
+.hero-desc{animation:fadeUp .6s .34s both}
+.hero-cta{animation:fadeUp .6s .42s both}
+.chips{animation:fadeUp .6s .5s both}
+.profile-card{animation:fadeUp .7s .3s both}
 
 /* METRICS */
-#metrics{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.mc{padding:36px 40px;border-right:1px solid var(--border);position:relative;overflow:hidden;transition:background .2s}
+#metrics{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.mc{padding:40px 44px;border-right:1px solid var(--ink);position:relative;transition:background .15s}
 .mc:last-child{border-right:none}
 .mc:hover{background:var(--surface)}
-.mc::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--amber);transition:width .4s cubic-bezier(.16,1,.3,1)}
-.mc:hover::after{width:100%}
-.mv{font-family:var(--mono);font-size:28px;font-weight:700;color:var(--white);letter-spacing:-1px;display:block;line-height:1;margin-bottom:8px}
-.mv span{font-size:15px;color:var(--amber)}
-.ml{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
-.mn{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4}
+.mv{font-family:var(--serif);font-size:clamp(48px,5vw,72px);font-weight:700;color:var(--ink);letter-spacing:-3px;display:block;line-height:.9;margin-bottom:12px}
+.mv span{font-family:var(--mono);font-size:18px;letter-spacing:0;font-weight:400;color:var(--muted)}
+.ml{font-family:var(--mono);font-size:10px;color:var(--ink);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;font-weight:700}
+.mn{font-size:13px;color:var(--muted);line-height:1.5;font-weight:300}
 
 /* SECTIONS */
-section{padding:100px 60px}
-.eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-.en{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--amber);letter-spacing:2px}
-.el{width:32px;height:1px;background:var(--border2)}
-.et{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
-h2{font-family:var(--serif);font-size:clamp(34px,4vw,54px);font-weight:400;letter-spacing:-1.5px;color:var(--white);line-height:1.05;margin-bottom:56px}
-h2 em{font-style:italic;color:var(--dim)}
+section{padding:100px 64px}
+.eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.en{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--red);letter-spacing:2px}
+.el{width:32px;height:1px;background:var(--rule)}
+.et{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:2px;text-transform:uppercase}
+h2{font-family:var(--serif);font-size:clamp(40px,5vw,68px);font-weight:700;letter-spacing:-2px;color:var(--ink);line-height:.95;margin-bottom:64px}
+h2 em{font-style:italic;font-weight:400;color:var(--muted)}
 
 /* PROJECTS */
-#projects{background:var(--bg)}
-.proj-grid{display:flex;flex-direction:column;gap:2px}
-.proj-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:44px;display:grid;grid-template-columns:1fr 110px;gap:32px;align-items:start;transition:all .28s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}
-.proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,var(--amber),transparent 60%);opacity:0;transition:opacity .3s}
-.proj-card:hover{border-color:var(--border2);transform:translateY(-3px);box-shadow:0 24px 64px rgba(0,0,0,.5)}
-.proj-card:hover::before{opacity:1}
-.proj-card.flagship{background:linear-gradient(135deg,#111822 0%,#141c26 100%);border-color:rgba(245,166,35,.2)}
-.ph{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.badge{font-family:var(--mono);font-size:10px;font-weight:700;padding:3px 9px;border-radius:5px;letter-spacing:1.2px;text-transform:uppercase}
-.ba{background:var(--amber-d);color:var(--amber);border:1px solid rgba(245,166,35,.25)}
-.bc{background:var(--cyan-d);color:var(--cyan);border:1px solid rgba(0,212,255,.2)}
-.pn{font-family:var(--mono);font-size:11px;color:var(--muted)}
-.pt{font-family:var(--serif);font-size:26px;font-weight:400;color:var(--white);letter-spacing:-.5px;margin-bottom:10px}
-.pd{font-size:14px;color:var(--dim);line-height:1.85;max-width:620px;margin-bottom:22px}
-.pd strong{color:var(--body);font-weight:500}
-.pm{display:flex;gap:28px;margin-bottom:22px}
-.pmi{display:flex;flex-direction:column;gap:2px}
-.pmv{font-family:var(--mono);font-size:18px;font-weight:700;color:var(--amber);letter-spacing:-.5px}
-.pml{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
-.ptags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:22px}
-.ptag{font-size:12px;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--border);padding:4px 11px;border-radius:6px;transition:all .18s}
-.ptag:hover{border-color:var(--border2);color:var(--body)}
-.plinks{display:flex;gap:10px}
-.pl{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:12px;font-weight:700;color:var(--body);text-decoration:none;padding:8px 15px;border-radius:8px;border:1px solid var(--border2);transition:all .2s;letter-spacing:.3px}
-.pl:hover{border-color:var(--amber);color:var(--amber)}
-.pl.pf{background:var(--white);color:var(--bg);border-color:transparent}
-.pl.pf:hover{background:var(--amber)}
-.big-num{font-family:var(--serif);font-style:italic;font-size:68px;color:rgba(255,255,255,.04);text-align:right;line-height:1;align-self:start;margin-top:8px}
+#projects{background:var(--bg);border-top:1px solid var(--ink)}
+.proj-grid{display:flex;flex-direction:column}
+.proj-card{border-bottom:1px solid var(--rule);padding:52px 0;display:grid;grid-template-columns:180px 1fr;gap:64px;align-items:start;transition:background .15s,padding .2s;position:relative}
+.proj-card:first-child{border-top:1px solid var(--rule)}
+.proj-card:hover{background:var(--surface);padding-left:20px;padding-right:20px;margin-left:-20px;margin-right:-20px}
+.proj-card.flagship{border-top:2px solid var(--ink)}
+
+.proj-meta{display:flex;flex-direction:column;gap:12px;padding-top:4px}
+.proj-num{font-family:var(--serif);font-size:80px;font-weight:700;font-style:italic;color:var(--rule);line-height:1;letter-spacing:-3px}
+.badge{font-family:var(--mono);font-size:10px;font-weight:700;padding:4px 10px;letter-spacing:1.5px;text-transform:uppercase;border:1px solid var(--ink);color:var(--ink);display:inline-block}
+.badge.flagship-badge{background:var(--ink);color:var(--bg)}
+
+.pt{font-family:var(--serif);font-size:clamp(28px,3vw,40px);font-weight:700;color:var(--ink);letter-spacing:-1px;margin-bottom:16px;line-height:1.0}
+.pd{font-size:15px;font-weight:300;color:var(--ink2);line-height:1.95;max-width:620px;margin-bottom:28px}
+.pd strong{color:var(--ink);font-weight:500}
+
+.pm{display:flex;gap:0;margin-bottom:28px;border:1px solid var(--rule)}
+.pmi{flex:1;padding:16px 20px;border-right:1px solid var(--rule)}
+.pmi:last-child{border-right:none}
+.pmv{font-family:var(--mono);font-size:16px;font-weight:700;color:var(--ink);letter-spacing:-.5px;display:block}
+.pml{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-top:2px}
+
+.ptags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:28px}
+.ptag{font-family:var(--mono);font-size:11px;color:var(--muted);background:transparent;border:1px solid var(--rule);padding:4px 12px;letter-spacing:.3px;transition:border-color .15s,color .15s}
+.ptag:hover{border-color:var(--ink);color:var(--ink)}
+
+.plinks{display:flex;gap:16px;align-items:center}
+.pl{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:1px;text-transform:uppercase;padding-bottom:2px;border-bottom:1px solid var(--ink);transition:color .15s,border-color .15s}
+.pl:hover{color:var(--red);border-color:var(--red)}
+.pl.pf{background:var(--ink);color:var(--bg);border:none;padding:8px 18px}
+.pl.pf:hover{background:var(--red)}
+
+.terminal{background:var(--surface);border:1px solid var(--rule);padding:20px;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:2.2;margin-top:24px}
+.terminal .t-line{display:block}
+.terminal .t-accent{color:var(--ink);font-weight:700}
+.terminal .t-live{color:var(--red);font-weight:700}
+.terminal .t-cursor{display:inline-block;width:7px;height:12px;background:var(--red);opacity:.8;animation:blink .9s step-end infinite;vertical-align:middle;margin-left:2px}
+@keyframes blink{0%,100%{opacity:.8}50%{opacity:0}}
 
 /* EXPERIENCE */
-#experience{background:var(--bg2)}
+#experience{background:var(--bg2);border-top:1px solid var(--ink)}
 .exp-list{display:flex;flex-direction:column}
-.exp-item{display:grid;grid-template-columns:220px 1fr;gap:60px;padding:48px 0;border-bottom:1px solid var(--border);align-items:start}
-.ep{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.8px;margin-bottom:10px}
-.etype{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;padding:3px 8px;border-radius:4px;background:var(--amber-d);color:var(--amber);border:1px solid rgba(245,166,35,.2);letter-spacing:1px;text-transform:uppercase}
-.etype.r{background:var(--cyan-d);color:var(--cyan);border-color:rgba(0,212,255,.2)}
-.er{font-family:var(--serif);font-size:24px;color:var(--white);letter-spacing:-.5px;margin-bottom:4px}
-.ec{font-size:14px;color:var(--cyan);font-weight:500;margin-bottom:20px}
-.eb{list-style:none;display:flex;flex-direction:column;gap:10px}
-.eb li{font-size:14px;color:var(--dim);padding-left:20px;position:relative;line-height:1.75}
-.eb li::before{content:'▸';position:absolute;left:0;color:var(--amber);font-size:10px;top:5px}
-.eb li strong{color:var(--body);font-weight:500}
+.exp-item{display:grid;grid-template-columns:220px 1fr;gap:64px;padding:52px 0;border-bottom:1px solid var(--rule);align-items:start}
+.exp-item:first-child{border-top:1px solid var(--rule)}
+.ep{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;display:block}
+.etype{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;padding:3px 8px;border:1px solid var(--ink);letter-spacing:1px;text-transform:uppercase;color:var(--ink)}
+.etype.r{border-color:var(--muted);color:var(--muted)}
+.er{font-family:var(--serif);font-size:28px;font-weight:700;color:var(--ink);letter-spacing:-.5px;margin-bottom:4px;margin-top:12px}
+.ec{font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:24px;letter-spacing:.5px}
+.eb{list-style:none;display:flex;flex-direction:column;gap:12px}
+.eb li{font-size:15px;font-weight:300;color:var(--ink2);padding-left:20px;position:relative;line-height:1.75}
+.eb li::before{content:'—';position:absolute;left:0;color:var(--rule);font-size:13px;top:0;font-family:var(--mono)}
+.eb li strong{color:var(--ink);font-weight:500}
 
 /* SKILLS */
-#skills{background:var(--bg)}
-.skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px}
-.sg{margin-bottom:32px}
-.sgn{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--amber);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
-.sp{display:flex;flex-wrap:wrap;gap:8px}
-.spill{font-size:13px;color:var(--body);background:var(--surface);border:1px solid var(--border);padding:6px 14px;border-radius:8px;transition:all .18s;cursor:default}
-.spill:hover{background:var(--amber-d);border-color:rgba(245,166,35,.3);color:var(--amber)}
-.cred-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px;position:relative;overflow:hidden}
-.cred-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--amber),var(--cyan) 80%,transparent)}
-.cred-title{font-family:var(--serif);font-size:20px;color:var(--white);margin-bottom:6px}
-.cred-sub{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:20px}
-.cert-list{display:flex;flex-direction:column;gap:10px;margin-top:14px}
-.cert-item{display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:9px;background:rgba(255,255,255,.03);border:1px solid var(--border)}
-.cdot{width:6px;height:6px;border-radius:50%;background:var(--amber);flex-shrink:0}
-.cname{font-size:13px;color:var(--body)}
-.csrc{font-family:var(--mono);font-size:10px;color:var(--muted);margin-left:auto;white-space:nowrap}
+#skills{background:var(--bg);border-top:1px solid var(--ink)}
+.skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.sg{margin-bottom:36px}
+.sgn{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--ink);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--rule)}
+.sp{display:flex;flex-wrap:wrap;gap:7px}
+.spill{font-family:var(--mono);font-size:11px;color:var(--muted);background:transparent;border:1px solid var(--rule);padding:5px 12px;letter-spacing:.3px;transition:all .15s;cursor:default}
+.spill:hover{border-color:var(--ink);color:var(--ink)}
+
+.cred-card{border:1px solid var(--ink);padding:36px}
+.cred-title{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.3px}
+.cred-sub{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:24px;font-weight:300}
+.cert-list{display:flex;flex-direction:column;gap:0;margin-top:16px}
+.cert-item{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.cert-item:last-child{border-bottom:none}
+.cdot{width:4px;height:4px;background:var(--ink);flex-shrink:0}
+.cname{font-size:13px;color:var(--ink);font-weight:400}
+.csrc{font-family:var(--mono);font-size:10px;color:var(--muted);margin-left:auto;white-space:nowrap;letter-spacing:.5px}
 
 /* ACHIEVEMENTS */
-#achievements{background:var(--bg2)}
-.ach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.ach-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:28px;position:relative;overflow:hidden;transition:all .25s}
-.ach-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--amber),transparent);transform:scaleX(0);transform-origin:left;transition:transform .3s}
-.ach-card:hover{border-color:var(--border2);transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.4)}
-.ach-card:hover::after{transform:scaleX(1)}
-.ai{font-size:24px;margin-bottom:14px;display:block}
-.at{font-family:var(--serif);font-size:17px;color:var(--white);margin-bottom:8px}
-.ad{font-size:13px;color:var(--muted);line-height:1.65}
+#achievements{background:var(--bg2);border-top:1px solid var(--ink)}
+.ach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink);border-left:1px solid var(--ink)}
+.ach-card{padding:36px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);transition:background .15s}
+.ach-card:hover{background:var(--card)}
+.ai{font-size:20px;margin-bottom:16px;display:block;filter:grayscale(1);transition:filter .2s}
+.ach-card:hover .ai{filter:grayscale(0)}
+.at{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-.3px}
+.ad{font-size:13px;font-weight:300;color:var(--muted);line-height:1.7}
 
 /* CONTACT */
-#contact{background:var(--bg)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.contact-desc{font-size:16px;color:var(--dim);line-height:1.85;margin-bottom:36px;max-width:400px;font-weight:300}
-.clinks{display:flex;flex-direction:column;gap:12px}
-.clink{display:flex;align-items:center;gap:14px;padding:15px 18px;border-radius:12px;background:var(--card);border:1px solid var(--border);text-decoration:none;transition:all .2s}
-.clink:hover{border-color:var(--amber);transform:translateX(4px)}
-.ci{width:38px;height:38px;border-radius:9px;background:var(--amber-d);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
-.clabel{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:2px}
-.cval{font-size:14px;color:var(--body);font-weight:500}
-.carr{margin-left:auto;color:var(--muted);font-size:16px}
-.cpanel{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:36px;position:relative;overflow:hidden}
-.cpanel::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--amber),var(--cyan))}
-.cpl{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
-.cpv{font-size:15px;color:var(--white);font-weight:500;margin-bottom:22px}
-.cpctas{display:flex;flex-direction:column;gap:10px}
+#contact{background:var(--bg);border-top:1px solid var(--ink)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start}
+.contact-headline{font-family:var(--serif);font-size:clamp(36px,4.5vw,60px);font-weight:700;letter-spacing:-2px;color:var(--ink);line-height:.95;margin-bottom:28px}
+.contact-headline em{font-style:italic;font-weight:400;color:var(--muted)}
+.contact-desc{font-size:15px;font-weight:300;color:var(--muted);line-height:1.9;margin-bottom:40px;max-width:400px}
+.clinks{display:flex;flex-direction:column;gap:0}
+.clink{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--rule);text-decoration:none;transition:padding-left .15s}
+.clink:first-child{border-top:1px solid var(--rule)}
+.clink:hover{padding-left:8px}
+.ci{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;min-width:56px}
+.cval{font-family:var(--mono);font-size:12px;color:var(--ink);font-weight:700}
+.carr{margin-left:auto;color:var(--rule);font-family:var(--mono);font-size:12px;transition:color .15s}
+.clink:hover .carr{color:var(--ink)}
+
+.cpanel{border:1px solid var(--ink);padding:40px}
+.cpl{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.cpv{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--ink);margin-bottom:24px;letter-spacing:-.3px}
+.panel-status{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:24px}
+.panel-rule{border:none;border-top:1px solid var(--rule);margin:20px 0}
+.cpctas{display:flex;flex-direction:column;gap:8px;margin-top:32px}
 
 /* FOOTER */
-footer{padding:24px 60px;border-top:1px solid var(--border);background:var(--bg2);display:flex;justify-content:space-between;align-items:center}
-footer p{font-family:var(--mono);font-size:11px;color:var(--muted)}
-.flinks{display:flex;gap:24px}
-.flinks a{font-family:var(--mono);font-size:11px;color:var(--muted);text-decoration:none;transition:color .2s}
-.flinks a:hover{color:var(--amber)}
+footer{padding:28px 64px;border-top:1px solid var(--ink);background:var(--ink);display:flex;justify-content:space-between;align-items:center}
+footer p{font-family:var(--mono);font-size:11px;color:rgba(247,246,242,.35);letter-spacing:.5px}
+.flinks{display:flex;gap:28px}
+.flinks a{font-family:var(--mono);font-size:11px;color:rgba(247,246,242,.35);text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:color .15s}
+.flinks a:hover{color:var(--bg)}
 
 /* RESPONSIVE */
 @media(max-width:1100px){
@@ -221,13 +226,18 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted)}
   .profile-card{display:none}
   section{padding:70px 24px}
   #metrics{grid-template-columns:repeat(2,1fr)}
-  .mc{border-bottom:1px solid var(--border)}
-  .proj-card{grid-template-columns:1fr;padding:28px}
-  .big-num{display:none}
-  .skills-layout,.contact-grid{grid-template-columns:1fr;gap:40px}
+  .mc:nth-child(2){border-right:none}
+  .mc{border-bottom:1px solid var(--ink)}
+  .mc:nth-child(3),.mc:nth-child(4){border-bottom:none}
+  .proj-card{grid-template-columns:1fr;padding:36px 0;gap:24px}
+  .proj-card:hover{padding-left:0;padding-right:0;margin-left:0;margin-right:0}
+  .pm{flex-wrap:wrap}
+  .pmi{border-bottom:1px solid var(--rule);border-right:none;min-width:50%}
+  .pmi:last-child{border-bottom:none}
+  .skills-layout,.contact-grid{grid-template-columns:1fr;gap:48px}
   .ach-grid{grid-template-columns:1fr}
-  .exp-item{grid-template-columns:1fr;gap:14px}
-  footer{flex-direction:column;gap:14px;padding:20px 24px;text-align:center}
+  .exp-item{grid-template-columns:1fr;gap:16px;padding:36px 0}
+  footer{flex-direction:column;gap:16px;padding:24px;text-align:center}
 }
 </style>
 </head>
@@ -241,47 +251,45 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted)}
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="assets/venkateshp_aiml_2026.pdf" download class="nav-cta">&#8595; Resume</a>
-  <a href="https://wa.me/919176636234" target="_blank" class="nav-cta">&#9742; WhatsApp</a>
+  <div class="nav-right">
+    <a href="assets/venkatesh_res.html" target="_blank" class="nav-ghost">View Resume</a>
+    <a href="assets/venkateshp_aiml_2026.pdf" download class="nav-cta">&#8595; Resume</a>
+  </div>
 </nav>
 
 <section id="hero">
-  <div class="grid-bg"></div>
-  <div class="glow1"></div>
-  <div class="glow2"></div>
   <div class="hero-inner">
     <div class="hero-text">
       <div class="hero-eyebrow">ML Engineer &middot; Chennai, India</div>
       <h1>Venkatesh <em>P.</em></h1>
-      <div class="hero-sub">I build ML systems that scale in production.</div>
+      <div class="hero-sub">I build LLM pipelines and vector search systems that run fast enough to ship.</div>
       <p class="hero-desc">
-        From <strong>medical RAG pipelines</strong> to <strong>semantic search engines over 42K+ papers</strong>,
-        I engineer end-to-end AI systems &mdash; vector search, LLM APIs, FastAPI backends,
-        and containerised MLOps on GCP. Bridging <strong>biotechnology and deep learning</strong>
-        with a focus on measurable, real-world impact.
+        <strong>2,979 QPS. 0.31ms. 55&times; cache speedup.</strong> From medical RAG to semantic search over 42K papers &mdash;
+        I own the full stack: embeddings, vector indexes, FastAPI backends, and containerised MLOps on GCP.
+        Biotech background meets production-grade ML.
       </p>
       <div class="hero-cta">
         <a href="#projects" class="btn-primary">View Projects &#8594;</a>
         <a href="assets/venkateshp_aiml_2026.pdf" download class="btn-ghost">&#8595; Resume</a>
-        <a href="assets/venkatesh_res.html"  class="btn-ghost">&#8595; View Resume</a>
         <a href="https://linkedin.com/in/venkatesh-ml" target="_blank" class="btn-ghost">LinkedIn &#8599;</a>
       </div>
-      <div class="status-chip">
-        <div class="status-dot"></div>
-        Open to full-time ML roles
+      <div class="chips">
+        <div class="status-chip"><div class="status-dot"></div>Open to full-time ML roles</div>
+        <div class="status-chip" style="color:var(--dim)">&#127760; Open to global relocation</div>
       </div>
     </div>
-
     <div class="profile-card">
       <div class="profile-img-wrap">
         <img src="assets/profile.jpg" alt="Venkatesh P" class="profile-img"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
         <div class="profile-fallback">VP</div>
-        <div class="profile-img-overlay"></div>
       </div>
       <div class="profile-footer">
-        <div class="profile-name">Venkatesh P</div>
-        <div class="profile-role">ML Engineer &middot; Open to roles</div>
+        <div>
+          <div class="profile-name">Venkatesh P</div>
+          <div class="profile-role">ML Engineer</div>
+        </div>
+        <div class="status-dot"></div>
       </div>
     </div>
   </div>
@@ -291,7 +299,7 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted)}
   <div class="mc">
     <span class="mv">2,979<span>/s</span></span>
     <div class="ml">FAISS QPS</div>
-    <div class="mn">Uncached IVFFlat &middot; 42,549 papers</div>
+    <div class="mn">IVFFlat &middot; 42,549 papers &middot; free-tier host</div>
   </div>
   <div class="mc">
     <span class="mv">0.31<span>ms</span></span>
@@ -299,14 +307,14 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted)}
     <div class="mn">p95 = 0.53ms &middot; 384-dim embeddings</div>
   </div>
   <div class="mc">
-    <span class="mv">62.3<span>MB</span></span>
-    <div class="ml">Index Size</div>
-    <div class="mn">42,549 arXiv papers &middot; 20+ domains</div>
+    <span class="mv">55<span>&times;</span></span>
+    <div class="ml">Cache Speedup</div>
+    <div class="mn">LRU cache &middot; PaperLens repeated queries</div>
   </div>
   <div class="mc">
     <span class="mv">87.6<span>%</span></span>
     <div class="ml">MS Risk Accuracy</div>
-    <div class="mn">GWAS ensemble &middot; RUSA Research</div>
+    <div class="mn">GWAS ensemble &middot; RUSA-funded research</div>
   </div>
 </div>
 
@@ -316,36 +324,49 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted)}
   <div class="proj-grid">
 
     <div class="proj-card flagship">
-      <div>
-        <div class="ph"><span class="badge ba">&#9733; Flagship</span><span class="pn">001</span></div>
+      <div class="proj-meta">
+        <span class="proj-num">01</span>
+        <span class="badge flagship-badge">&#9733; Flagship</span>
+        <span class="badge" style="margin-top:4px">Live &middot; HuggingFace</span>
+      </div>
+      <div class="proj-body">
         <div class="pt">PaperLens</div>
-        <p class="pd">Semantic search engine over 42,549 arXiv research papers &mdash; search by meaning, not keywords. End-to-end pipeline: arXiv ingestion &rarr; Sentence-Transformers (384-dim) &rarr; FAISS IVFFlat vector index &rarr; FastAPI backend with LRU caching &rarr; Groq LLaMA-3.3-70B RAG summaries &rarr; Streamlit UI, deployed on HuggingFace Spaces.</p>
+        <p class="pd">Searches 42,549 arXiv papers <strong>by meaning, not keywords</strong> — and explains why each result matters. FAISS IVFFlat vector index + LRU cache hits <strong>2,979 QPS at 0.31ms p50</strong>; Groq LLaMA-3.3-70B generates research summaries in ~1.2s.</p>
         <div class="pm">
           <div class="pmi"><span class="pmv">0.31ms</span><span class="pml">p50 latency</span></div>
-          <div class="pmi"><span class="pmv">2,979</span><span class="pml">queries/sec</span></div>
-          <div class="pmi"><span class="pmv">62.3MB</span><span class="pml">index size</span></div>
+          <div class="pmi"><span class="pmv">2,979/s</span><span class="pml">queries/sec</span></div>
+          <div class="pmi"><span class="pmv">55&times;</span><span class="pml">cache speedup</span></div>
           <div class="pmi"><span class="pmv">~1.2s</span><span class="pml">AI summary</span></div>
         </div>
         <div class="ptags">
-          <span class="ptag">sentence-transformers</span><span class="ptag">FAISS IVFFlat</span><span class="ptag">FastAPI</span><span class="ptag">Groq LLaMA-3</span><span class="ptag">ChromaDB</span><span class="ptag">Streamlit</span><span class="ptag">Docker</span><span class="ptag">HuggingFace Spaces</span>
+          <span class="ptag">sentence-transformers</span><span class="ptag">FAISS IVFFlat</span><span class="ptag">FastAPI</span><span class="ptag">Groq LLaMA-3</span><span class="ptag">Streamlit</span><span class="ptag">Docker</span><span class="ptag">HuggingFace Spaces</span>
         </div>
         <div class="plinks">
           <a href="https://github.com/venkatesh-hyper/paperlens" target="_blank" class="pl pf">&#8599; GitHub</a>
           <a href="https://paperlens-i.streamlit.app/" target="_blank" class="pl">Live Demo &#8599;</a>
         </div>
+        <div class="terminal">
+          <span class="t-line">&gt; init sequence...</span>
+          <span class="t-line">&gt; loading vectors <span class="t-accent">[dim=384]</span></span>
+          <span class="t-line">&gt; index: IVFFlat &middot; corpus: <span class="t-accent">42,549</span> papers</span>
+          <span class="t-line">&gt; cache: <span class="t-accent">55&times;</span> speedup on repeated queries</span>
+          <span class="t-line t-live">&gt; LIVE &middot; p50 = 0.31ms<span class="t-cursor"></span></span>
+        </div>
       </div>
-      <div class="big-num">01</div>
     </div>
 
     <div class="proj-card">
-      <div>
-        <div class="ph"><span class="badge bc">BioML &middot; Research</span><span class="pn">002</span></div>
-        <div class="pt">MS Risk Prediction &mdash; GWAS</div>
-        <p class="pd">University-funded ML pipeline for Multiple Sclerosis genetic risk prediction using GWAS SNP data. Engineered polygenic risk features from genomic variants, trained Random Forest + ensemble models achieving <strong>87.6% accuracy</strong>. Streamlit dashboard for SNP visualisation, polygenic risk scoring, and SHAP-based model interpretability. Containerised on GCP with DVC data versioning.</p>
+      <div class="proj-meta">
+        <span class="proj-num">02</span>
+        <span class="badge">BioML &middot; Research</span>
+      </div>
+      <div class="proj-body">
+        <div class="pt">MS Risk Prediction — GWAS</div>
+        <p class="pd">University-funded ML pipeline for Multiple Sclerosis genetic risk prediction — a problem where most tools are statistical, not predictive. SNP-derived polygenic features into <strong>Random Forest + ensemble models at 87.6% accuracy</strong>; SHAP interpretability dashboard used actively by the research team. Containerised on GCP with DVC versioning.</p>
         <div class="pm">
           <div class="pmi"><span class="pmv">87.6%</span><span class="pml">Accuracy</span></div>
           <div class="pmi"><span class="pmv">GWAS</span><span class="pml">SNP Data</span></div>
-          <div class="pmi"><span class="pmv">SHAP</span><span class="pml">Explainability</span></div>
+          <div class="pmi"><span class="pmv">SHAP</span><span class="pml">Interpretable</span></div>
         </div>
         <div class="ptags">
           <span class="ptag">Random Forest</span><span class="ptag">XGBoost</span><span class="ptag">SHAP</span><span class="ptag">Pandas</span><span class="ptag">Streamlit</span><span class="ptag">GCP</span><span class="ptag">DVC</span><span class="ptag">Docker</span>
@@ -354,14 +375,16 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted)}
           <a href="https://github.com/venkatesh-hyper" target="_blank" class="pl pf">&#8599; GitHub</a>
         </div>
       </div>
-      <div class="big-num">02</div>
     </div>
 
     <div class="proj-card">
-      <div>
-        <div class="ph"><span class="badge bc">RAG System</span><span class="pn">003</span></div>
+      <div class="proj-meta">
+        <span class="proj-num">03</span>
+        <span class="badge">RAG System</span>
+      </div>
+      <div class="proj-body">
         <div class="pt">Enterprise Ticket Analysis Bot</div>
-        <p class="pd">Production RAG system over 70MB+ enterprise ticket logs. Full pipeline: PDF parsing &rarr; chunking &rarr; SentenceTransformer embeddings &rarr; ChromaDB vector store &rarr; Groq Llama-4 Scout for contextual Q&amp;A. REST API via FastAPI, dashboard via Streamlit.</p>
+        <p class="pd">RAG pipeline over 70MB+ of enterprise ticket logs — surfaces answers keyword search can't find. PDF &rarr; chunking &rarr; SentenceTransformer embeddings &rarr; ChromaDB &rarr; Groq Llama-4 Scout delivers contextual Q&amp;A; REST API via FastAPI, ops dashboard via Streamlit.</p>
         <div class="ptags">
           <span class="ptag">ChromaDB</span><span class="ptag">Groq Llama-4 Scout</span><span class="ptag">SentenceTransformers</span><span class="ptag">FastAPI</span><span class="ptag">Streamlit</span>
         </div>
@@ -369,14 +392,16 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted)}
           <a href="https://github.com/venkatesh-hyper/ticket_bot_llm" target="_blank" class="pl pf">&#8599; GitHub</a>
         </div>
       </div>
-      <div class="big-num">03</div>
     </div>
 
     <div class="proj-card">
-      <div>
-        <div class="ph"><span class="badge ba">LLM + RAG</span><span class="pn">004</span></div>
-        <div class="pt">Well.AI &mdash; Medical LLM Assistant</div>
-        <p class="pd">Medical RAG pipeline built during internship at NASO Technologies. Structured retrieval with dense embeddings for domain-specific health Q&amp;A. FastAPI microservices deployed on GCP with Supabase session logging for full conversation traceability.</p>
+      <div class="proj-meta">
+        <span class="proj-num">04</span>
+        <span class="badge">LLM + RAG</span>
+      </div>
+      <div class="proj-body">
+        <div class="pt">Well.AI — Medical LLM Assistant</div>
+        <p class="pd">Production medical RAG system shipped at NASO Technologies. Dense embeddings + structured retrieval for health domain Q&amp;A; <strong>FastAPI microservices on GCP</strong> with Supabase session logging for full conversation auditability — every answer traceable to its source chunks.</p>
         <div class="ptags">
           <span class="ptag">LangChain</span><span class="ptag">HuggingFace</span><span class="ptag">FastAPI</span><span class="ptag">GCP</span><span class="ptag">Supabase</span><span class="ptag">Docker</span>
         </div>
@@ -384,14 +409,16 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted)}
           <a href="https://github.com/venkatesh-hyper/Well.AI" target="_blank" class="pl pf">&#8599; GitHub</a>
         </div>
       </div>
-      <div class="big-num">04</div>
     </div>
 
     <div class="proj-card">
-      <div>
-        <div class="ph"><span class="badge bc">Computer Vision</span><span class="pn">005</span></div>
+      <div class="proj-meta">
+        <span class="proj-num">05</span>
+        <span class="badge">Computer Vision</span>
+      </div>
+      <div class="proj-body">
         <div class="pt">Brain Tumor Classifier</div>
-        <p class="pd">CNN achieving 95% accuracy on MRI brain tumor classification across 4 classes (glioma, meningioma, pituitary, no tumor). Augmentation + normalization preprocessing pipeline, containerised clinical inference interface with Docker.</p>
+        <p class="pd"><strong>95% accuracy</strong> across 4 MRI tumor classes (glioma, meningioma, pituitary, no tumor) — built for portable clinical inference. Transfer learning + augmentation pipeline, Dockerised for single-command deployment in any environment.</p>
         <div class="ptags">
           <span class="ptag">TensorFlow</span><span class="ptag">CNN</span><span class="ptag">Transfer Learning</span><span class="ptag">Docker</span>
         </div>
@@ -399,7 +426,6 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted)}
           <a href="https://github.com/venkatesh-hyper/Brain-Tumour-classification" target="_blank" class="pl pf">&#8599; GitHub</a>
         </div>
       </div>
-      <div class="big-num">05</div>
     </div>
 
   </div>
@@ -407,35 +433,35 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted)}
 
 <section id="experience">
   <div class="eyebrow"><span class="en">02</span><div class="el"></div><span class="et">Work History</span></div>
-  <h2>Where I've <em>worked.</em></h2>
+  <h2>Where I've <em>shipped.</em></h2>
   <div class="exp-list">
     <div class="exp-item">
       <div>
-        <div class="ep">JAN 2024 &mdash; APR 2024</div>
+        <span class="ep">JAN 2024 &mdash; APR 2024</span>
         <span class="etype">Internship</span>
       </div>
       <div>
         <div class="er">AI/ML Engineer Intern</div>
         <div class="ec">NASO Technologies</div>
         <ul class="eb">
-          <li>Built <strong>Well.AI</strong> &mdash; a production medical RAG pipeline using LangChain + HuggingFace + ChromaDB, deployed via FastAPI on GCP with Supabase session logging.</li>
-          <li>Containerised all services with Docker; standardised multi-service deployment, cutting environment setup time significantly.</li>
-          <li>Designed prompt-engineering workflows for domain-specific health reasoning, improving LLM response quality for medical queries.</li>
+          <li><strong>Shipped Well.AI to production</strong> in 4 months — LangChain + HuggingFace RAG pipeline on GCP with Supabase audit logging for every session.</li>
+          <li><strong>Reduced environment setup from hours to one command</strong> by Dockerising all microservices and standardising multi-service deployment configs.</li>
+          <li>Designed prompt-engineering workflows for medical domain reasoning; measurably improved LLM answer relevance on clinical queries.</li>
         </ul>
       </div>
     </div>
     <div class="exp-item">
       <div>
-        <div class="ep">APR 2024 &mdash; JUL 2024</div>
+        <span class="ep">APR 2024 &mdash; JUL 2024</span>
         <span class="etype r">Research</span>
       </div>
       <div>
         <div class="er">Machine Learning Researcher</div>
         <div class="ec">RUSA Project &middot; University of Madras</div>
         <ul class="eb">
-          <li>Engineered SNP-derived genomic features from GWAS data; trained <strong>Random Forest + ensemble models achieving 87.6% accuracy</strong> on Multiple Sclerosis genetic risk prediction.</li>
-          <li>Built Streamlit dashboard for polygenic risk scoring, SNP visualisation, and SHAP-based model interpretability &mdash; used actively by the research team.</li>
-          <li>Deployed reproducible containerised ML workflows on GCP with DVC for data versioning and experiment tracking.</li>
+          <li><strong>87.6% accuracy on MS genetic risk prediction</strong> — engineered polygenic SNP features from GWAS data; trained Random Forest + ensemble models on high-dimensional genomic input.</li>
+          <li>Interpretability dashboard with SHAP and polygenic risk scoring <strong>adopted by the active research team</strong> for ongoing clinical analysis.</li>
+          <li>Reproducible containerised ML pipeline on GCP with DVC data versioning — experiments tracked and re-runnable by any team member.</li>
         </ul>
       </div>
     </div>
@@ -444,7 +470,7 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted)}
 
 <section id="skills">
   <div class="eyebrow"><span class="en">03</span><div class="el"></div><span class="et">Tech Stack</span></div>
-  <h2>Tools I <em>master.</em></h2>
+  <h2>Tools I <em>ship with.</em></h2>
   <div class="skills-layout">
     <div>
       <div class="sg">
@@ -475,8 +501,8 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted)}
     <div>
       <div class="cred-card">
         <div class="cred-title">Education</div>
-        <div class="cred-sub">Master of Computer Applications (AI/ML) &mdash; University of Madras, Chennai &middot; 2023&ndash;2025<br>B.Sc. Biotechnology &middot; 2020&ndash;2023</div>
-        <div class="cred-title" style="margin-top:20px">Certifications</div>
+        <div class="cred-sub">Master of Computer Applications (AI/ML) &mdash; University of Madras, Chennai &middot; 2023&ndash;2025<br>B.Sc. Biotechnology &middot; 2020&ndash;2023 &mdash; rare interdisciplinary base for genomics ML</div>
+        <div class="cred-title">Certifications</div>
         <div class="cert-list">
           <div class="cert-item"><div class="cdot"></div><span class="cname">AWS Data Engineering Bootcamp</span><span class="csrc">Udemy &middot; 2024</span></div>
           <div class="cert-item"><div class="cdot"></div><span class="cname">Machine Learning A&ndash;Z</span><span class="csrc">Udemy &middot; 2024</span></div>
@@ -493,35 +519,35 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted)}
   <div class="ach-grid">
     <div class="ach-card">
       <span class="ai">&#129352;</span>
-      <div class="at">National Finalist</div>
-      <div class="ad">National AI Hackathon &mdash; Top 5% out of 500+ participants nationwide.</div>
+      <div class="at">Top 5% — National AI Hackathon</div>
+      <div class="ad">National Finalist out of 500+ participants. Competing at national level as a grad student says more than a certificate.</div>
     </div>
     <div class="ach-card">
       <span class="ai">&#128300;</span>
       <div class="at">RUSA Research Fellow</div>
-      <div class="ad">University-funded research on GWAS-based genetic risk prediction for Multiple Sclerosis.</div>
+      <div class="ad">University-funded research grant — 87.6% accuracy on MS genetic risk prediction. Not a class project. A funded study.</div>
     </div>
     <a href="https://medium.com/@venkateshpvnky9" target="_blank" style="text-decoration:none;color:inherit">
       <div class="ach-card" style="height:100%">
         <span class="ai">&#9998;&#65039;</span>
-        <div class="at">Technical Writer</div>
-        <div class="ad">Published on Medium &mdash; EDA techniques, NLP pipelines, and Genomics ML. &#8599;</div>
+        <div class="at">Technical Writer on Medium</div>
+        <div class="ad">Published: EDA techniques, NLP pipelines, Genomics ML. Writing is how I verify I actually understand something. &#8599;</div>
       </div>
     </a>
     <div class="ach-card">
       <span class="ai">&#127760;</span>
-      <div class="at">Rotaract Vice President</div>
-      <div class="ad">Led 5+ AI awareness events. Mentored 150+ students in physics and tech.</div>
+      <div class="at">Rotaract VP &mdash; 150+ Mentored</div>
+      <div class="ad">Led 5+ AI awareness events. Mentored 150+ students in physics and tech. Communication and leadership, not just code.</div>
     </div>
     <div class="ach-card">
       <span class="ai">&#127891;</span>
-      <div class="at">B.Sc. Biotechnology</div>
-      <div class="ad">Rare interdisciplinary foundation &mdash; ML applied to genomics and clinical data science.</div>
+      <div class="at">Biotech &times; ML &mdash; Rare Stack</div>
+      <div class="ad">B.Sc. Biotechnology + MCA (AI/ML). Most ML engineers can't read a GWAS study. I can build one and productionise it.</div>
     </div>
     <div class="ach-card">
       <span class="ai">&#9729;&#65039;</span>
-      <div class="at">Cloud Trained</div>
-      <div class="ad">AWS Data Engineering Bootcamp + ML A&ndash;Z. Practical deployment on GCP and AWS.</div>
+      <div class="at">Deployed on GCP + AWS</div>
+      <div class="ad">AWS Data Engineering Bootcamp + ML A&ndash;Z. Production deployments on GCP (internship) and AWS (personal projects).</div>
     </div>
   </div>
 </section>
@@ -530,44 +556,44 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted)}
   <div class="eyebrow"><span class="en">05</span><div class="el"></div><span class="et">Get in Touch</span></div>
   <div class="contact-grid">
     <div>
-      <h2>Let's <em>connect.</em></h2>
-      <p class="contact-desc">Open to full-time ML Engineer and Data Scientist roles &mdash; Chennai, remote, or relocation. Fast response guaranteed.</p>
+      <div class="contact-headline">Ready to scale<br>your ML pipelines?<br><em>Let's build.</em></div>
+      <p class="contact-desc">Open to ML Engineer and Data Scientist roles — Chennai, Hyderabad, remote, or global relocation. Response within 24 hours, guaranteed.</p>
       <div class="clinks">
         <a href="mailto:venkateshpvnky9@gmail.com" class="clink">
-          <div class="ci">&#9993;&#65039;</div>
-          <div><div class="clabel">Email</div><div class="cval">venkateshpvnky9@gmail.com</div></div>
+          <div class="ci">Email</div>
+          <div class="cval">venkateshpvnky9@gmail.com</div>
           <div class="carr">&#8594;</div>
         </a>
         <a href="https://linkedin.com/in/venkatesh-ml" target="_blank" class="clink">
-          <div class="ci">&#128188;</div>
-          <div><div class="clabel">LinkedIn</div><div class="cval">linkedin.com/in/venkatesh-ml</div></div>
+          <div class="ci">LinkedIn</div>
+          <div class="cval">linkedin.com/in/venkatesh-ml</div>
           <div class="carr">&#8594;</div>
         </a>
         <a href="https://github.com/venkatesh-hyper" target="_blank" class="clink">
-          <div class="ci">&#128025;</div>
-          <div><div class="clabel">GitHub</div><div class="cval">github.com/venkatesh-hyper</div></div>
+          <div class="ci">GitHub</div>
+          <div class="cval">github.com/venkatesh-hyper</div>
           <div class="carr">&#8594;</div>
         </a>
         <a href="https://medium.com/@venkateshpvnky9" target="_blank" class="clink">
-          <div class="ci">&#9998;&#65039;</div>
-          <div><div class="clabel">Medium</div><div class="cval">medium.com/@venkateshpvnky9</div></div>
+          <div class="ci">Medium</div>
+          <div class="cval">medium.com/@venkateshpvnky9</div>
           <div class="carr">&#8594;</div>
         </a>
       </div>
     </div>
     <div class="cpanel">
       <div class="cpl">Current Status</div>
-      <div class="cpv">Available for opportunities</div>
-      <div class="status-chip" style="margin-bottom:24px">
-        <div class="status-dot"></div>
-        Open to full-time roles
-      </div>
+      <div class="cpv">Actively interviewing</div>
+      <div class="panel-status"><div class="status-dot"></div>Open to full-time roles</div>
+      <hr class="panel-rule">
       <div class="cpl">Location</div>
-      <div class="cpv">Chennai, India &middot; Remote &middot; Relocation OK</div>
-      <div class="cpl" style="margin-top:20px">Target Roles</div>
+      <div class="cpv">Chennai, India &middot; Remote &middot; Global Relocation</div>
+      <div class="cpl">Target Roles</div>
       <div class="cpv">ML Engineer &middot; Data Scientist &middot; AI Engineer</div>
-      <div class="cpctas" style="margin-top:24px">
-        <a href="https://wa.me/919176636234" class="btn-primary" style="justify-content:center">&#9993; Send a Message</a>
+      <div class="cpl">Response Time</div>
+      <div class="cpv" style="margin-bottom:0">Within 24 hours</div>
+      <div class="cpctas">
+        <a href="https://wa.me/919176636234" target="_blank" class="btn-primary" style="justify-content:center">&#9993; Message on WhatsApp</a>
         <a href="assets/venkateshp_aiml_2026.pdf" download class="btn-ghost" style="justify-content:center">&#8595; Download Resume</a>
       </div>
     </div>
